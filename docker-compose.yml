@@ -2,7 +2,8 @@ version: "3.9"
 services:
   nginx:
     build: .
-    image: "nginx-auto-reload"
+    image: ghcr.io/datamachines/auto-reload-nginx-docker:main
+    #image: "nginx-auto-reload"
     container_name: nginx-auto-reload
     ports:
       - "80:80"
