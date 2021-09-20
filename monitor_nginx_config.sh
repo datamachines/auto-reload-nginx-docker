@@ -3,7 +3,7 @@
 #monitor nginx folder, and reload nginx if detecth create/modify/delete event
 while true
 do
- inotifywait --exclude .swp -e create -e modify -e delete -e move /etc/nginx
+ inotifywait --exclude .swp -r  -e create -e modify -e delete -e move /etc/nginx
  nginx -t
  if [ $? -eq 0 ]
  then

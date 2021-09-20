@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  nginx:
+    build: .
+    image: "nginx-auto-reload"
+    container_name: nginx-auto-reload
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.cfg:/etc/nginx/nginx.cfg
+      - ./ssl:/etc/nginx/ssl:ro
+      - ./config.d:/etc/nginx/config.d:ro
+
